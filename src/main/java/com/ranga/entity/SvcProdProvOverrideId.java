@@ -44,4 +44,35 @@ public class SvcProdProvOverrideId implements Serializable{
 		this.svcProdId = svcProdId;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((daccCode == null) ? 0 : daccCode.hashCode());
+		result = prime * result + ((svcProdId == null) ? 0 : svcProdId.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		SvcProdProvOverrideId other = (SvcProdProvOverrideId) obj;
+		if (daccCode == null) {
+			if (other.daccCode != null)
+				return false;
+		} else if (!daccCode.equals(other.daccCode))
+			return false;
+		if (svcProdId == null) {
+			if (other.svcProdId != null)
+				return false;
+		} else if (!svcProdId.equals(other.svcProdId))
+			return false;
+		return true;
+	}
+	
 }
